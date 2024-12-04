@@ -2,9 +2,7 @@ import java.util.Scanner;
 
 import static java.lang.System.exit;
 
-public class Lab_2 {
-    // Lab5_2
-    // 교수님이 작성
+public class Lab_2_2 {
     static void displayMenu() {
         System.out.println();
         System.out.println("메뉴");
@@ -27,12 +25,49 @@ public class Lab_2 {
         }
     }
 
+    static void newMatrix(int[] newArray){
+        Scanner sc = new Scanner(System.in);
+        int numOfStudents = 0;
+        int MAX_STD_NUMBER = 3;
+        final int FIELD_NUM = 6;
+        int arrayCount = 0;
+
+        float[][] stdMatrix = new float[MAX_STD_NUMBER][FIELD_NUM];
+
+        if(numOfStudents > MAX_STD_NUMBER){
+            arrayCount += 3;
+            float[] NEW_ARRAY = new float[MAX_STD_NUMBER + arrayCount];
+        }
+
+
+        System.out.println("학번을 입력하세요");
+        stdMatrix[numOfStudents][0] = sc.nextFloat();
+
+        System.out.println("국어 성적을 입력하세요");
+        stdMatrix[numOfStudents][1] = sc.nextFloat();
+
+        System.out.println("수학 성적을 입력하세요");
+        stdMatrix[numOfStudents][2] = sc.nextFloat();
+
+        System.out.println("영어 성적을 입력하세요");
+        stdMatrix[numOfStudents][3] = sc.nextFloat();
+
+        stdMatrix[numOfStudents][4] = stdMatrix[numOfStudents][1] + stdMatrix[numOfStudents][2] + stdMatrix[numOfStudents][3];
+
+        stdMatrix[numOfStudents][5] = stdMatrix[numOfStudents][4] / 3.0f;
+
+        numOfStudents++;
+    }
+
+
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         int numOfStudents = 0;
-        final int MAX_STD_NUMBER = 3;
+        int MAX_STD_NUMBER = 3;
         final int FIELD_NUM = 6;
+        int arrayCount = 0;
 
         float[][] stdMatrix = new float[MAX_STD_NUMBER][FIELD_NUM];
 
@@ -119,5 +154,6 @@ public class Lab_2 {
             }
 
         }
+
     }
 }
